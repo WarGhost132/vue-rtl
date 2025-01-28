@@ -15,7 +15,7 @@ import InventorySidebar from '../components/InventorySidebar.vue'
   width: 100%;
   height: 100vh;
   display: grid;
-  grid-template-columns: 3fr 9fr;
+  grid-template-columns: 4fr 8fr;
   grid-template-rows: 11fr 1fr;
   gap: 24px;
   padding: 32px;
