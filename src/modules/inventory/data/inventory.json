@@ -1,0 +1,17 @@
+[
+	{
+		"id": 1,
+		"image": "item_1.png",
+		"quantity": 4
+	},
+	{
+		"id": 2,
+		"image": "item_2.png",
+		"quantity": 2
+	},
+	{
+		"id": 3,
+		"image": "item_3.png",
+		"quantity": 5
+	}
+]
