@@ -4,15 +4,15 @@ import {Icon} from '@iconify/vue'
 </script>
 
 <template>
-	<div class="card">
-		<div class="footer__wrapper">
+	<div class="inventory-footer card">
+		<div class="inventory-footer__wrapper">
 			<Icon
-				class="close-btn"
+				class="inventory-footer__close-btn"
 				icon="material-symbols:close"
 				width="24"
 				height="24"
 			/>
-			<div class="footer__skeleton__wrapper">
+			<div class="inventory-footer__skeleton-wrapper">
 				<BaseSkeleton width="100" height="36" borderRadius="8" />
 			</div>
 		</div>
@@ -20,19 +20,19 @@ import {Icon} from '@iconify/vue'
 </template>
 
 <style>
-.footer__wrapper {
+.inventory-footer__wrapper {
 	position: relative;
 	height: 100%;
 }
 
-.close-btn {
+.inventory-footer__close-btn {
 	position: absolute;
 	top: 0;
 	right: 0;
 	margin: 8px;
 }
 
-.footer__skeleton__wrapper {
+.inventory-footer__skeleton-wrapper {
 	width: 100%;
 	height: 100%;
 	display: flex;

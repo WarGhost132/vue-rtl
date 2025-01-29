@@ -15,31 +15,39 @@ defineProps({
 </script>
 
 <template>
-  <button :class="type">
-    {{ title }}
-  </button>
+	<button :class="['base-button', `base-button--${type}`]">
+		<span class="base-button__title">{{ title }}</span>
+	</button>
 </template>
 
 <style scoped lang="scss">
-button {
-  width: 100%;
-  padding: 11px 0;
-  border-radius: 8px;
-  border: none;
+.base-button {
+	width: 100%;
+	padding: 11px 0;
+	border-radius: 8px;
+	border: none;
 	cursor: pointer;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
 }
 
-button:hover {
+.base-button__title {
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.base-button:hover {
 	opacity: 0.9;
 }
 
-.primary {
-  background-color: var(--dark-color-primary);
-  color: var(--dark-font-color-primary)
+.base-button--primary {
+	background-color: var(--dark-color-primary);
+	color: var(--dark-font-color-primary);
 }
 
-.secondary {
-  background-color: var(--dark-color-secondary);
-  color: var(--dark-font-color-secondary)
+.base-button--secondary {
+	background-color: var(--dark-color-secondary);
+	color: var(--dark-font-color-secondary);
 }
 </style>

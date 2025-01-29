@@ -37,13 +37,13 @@ const handleDelete = ({ id, quantity }: { id: number, quantity: number }) => {
 </script>
 
 <template>
-	<div class="inventory-container">
-		<div class="card">
-			<div class="grid">
+	<div class="inventory-content">
+		<div class="inventory-content__card card">
+			<div class="inventory-content__grid">
 				<div
 					v-for="(cell, index) in inventory.board"
 					:key="index"
-					class="cell"
+					class="inventory-content__cell"
 					:draggable="cell.id !== null"
 					@dragstart="cell.id !== null && onDragStart(index)"
 					@dragover.prevent
@@ -51,8 +51,8 @@ const handleDelete = ({ id, quantity }: { id: number, quantity: number }) => {
 					@click="handleCellClick(cell.id)"
 				>
 					<div v-if="cell.image">
-						<img :src="cell.image" :alt="'Item ' + cell.id" class="item-image" />
-						<span class="quantity">{{ cell.quantity }}</span>
+						<img :src="cell.image" :alt="'Item ' + cell.id" class="inventory-content__item-image" />
+						<span class="inventory-content__quantity">{{ cell.quantity }}</span>
 					</div>
 				</div>
 			</div>
@@ -68,22 +68,22 @@ const handleDelete = ({ id, quantity }: { id: number, quantity: number }) => {
 </template>
 
 <style>
-.inventory-container {
+.inventory-content {
 	position: relative;
 }
 
-.card {
+.inventory-content__card {
 	overflow: hidden;
 }
 
-.grid {
+.inventory-content__grid {
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
 	width: 100%;
 	height: 100%;
 }
 
-.cell {
+.inventory-content__cell {
 	width: 100%;
 	min-height: 100px;
 	display: flex;
@@ -94,16 +94,16 @@ const handleDelete = ({ id, quantity }: { id: number, quantity: number }) => {
 	cursor: pointer;
 }
 
-.cell:hover {
+.inventory-content__cell:hover {
 	background-color: #2F2F2F;
 }
 
-.item-image {
+.inventory-content__item-image {
 	width: 54px;
 	height: 54px;
 }
 
-.quantity {
+.inventory-content__quantity {
 	position: absolute;
 	display: flex;
 	justify-content: center;
