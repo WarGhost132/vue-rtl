@@ -1,12 +1,7 @@
 import {defineStore} from 'pinia'
 import {ref, watch} from 'vue'
 import inventoryData from '../data/inventory.json'
-
-interface IInventory {
-  id: number | null,
-  image: string | null,
-  quantity: number
-}
+import type {IInventory} from '../types/inventoryTypes.ts'
 
 export const useInventoryStore = defineStore("inventory", () => {
   const board = ref<IInventory[]>([]);
@@ -53,7 +48,26 @@ export const useInventoryStore = defineStore("inventory", () => {
     }
   }
   
+  function getItemById(id: number): IInventory | null {
+    return board.value.find((item) => item.id === id) || null
+  }
+  
+  function removeItem(id: number, quantity: number) {
+    const itemIndex = board.value.findIndex(item => item.id === id)
+    if (itemIndex !== -1) {
+      const item = board.value[itemIndex]
+      
+      if (item.quantity > quantity) {
+        item.quantity -= quantity
+      } else {
+        board.value.splice(itemIndex, 1)
+      }
+      
+      saveBoard()
+    }
+  }
+  
   watch(board, saveBoard, { deep: true })
   
-  return { board, initBoard, moveItem }
+  return { board, initBoard, moveItem, getItemById, removeItem }
 })

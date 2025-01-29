@@ -25,7 +25,12 @@ button {
   width: 100%;
   padding: 11px 0;
   border-radius: 8px;
-  border: none
+  border: none;
+	cursor: pointer;
+}
+
+button:hover {
+	opacity: 0.9;
 }
 
 .primary {
