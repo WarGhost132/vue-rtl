@@ -3,7 +3,7 @@ defineProps({
   width: {
     type: String,
     required: true,
-    validators: value => {
+    validator: value => {
       return [
         '100',
         '90',
@@ -43,7 +43,13 @@ defineProps({
 
 .base-skeleton__item {
 	overflow: hidden;
-	background: linear-gradient(90deg, var(--skeleton-gradient-start), var(--skeleton-gradient-middle), var(--skeleton-gradient-end));
+	background:
+		linear-gradient(
+				90deg,
+				var(--skeleton-gradient-start),
+				var(--skeleton-gradient-middle),
+				var(--skeleton-gradient-end)
+		);
 	background-size: 400% 400%;
 	animation: gradient 10s ease infinite;
 	transform: translate3d(0, 0, 0);
