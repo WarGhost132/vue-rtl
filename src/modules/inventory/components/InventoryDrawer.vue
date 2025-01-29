@@ -85,9 +85,11 @@ const confirmDelete = () => {
 	right: 0;
 	width: 40%;
 	height: 100%;
-	background: linear-gradient(180deg, rgba(30, 30, 30, 0.8) 1%, #262626 99%);
+	background: linear-gradient(180deg, var(--drawer-gradient-start) 1%, var(--drawer-gradient-end) 99%);
 	padding: 18px 15px;
-	box-shadow: -3px 0 5px rgba(0, 0, 0, 0.3);
+	border: 1px solid var(--card-border);
+	border-top-right-radius: 12px;
+	border-bottom-right-radius: 12px;
 }
 .inventory-drawer__header {
 	display: flex;
@@ -108,7 +110,7 @@ const confirmDelete = () => {
 .inventory-drawer__content hr {
 	width: 100%;
 	border: none;
-	border-top: 1px solid #4d4d4d;
+	border-top: 1px solid var(--card-border);
 }
 .inventory-drawer__content img {
 	min-width: 130px;
@@ -138,10 +140,10 @@ const confirmDelete = () => {
 .inventory-drawer__delete-input {
 	width: 100%;
 	padding: 10px;
-	border: 1px solid #4d4d4d;
+	border: 1px solid var(--card-border);
 	border-radius: 8px;
-	background: #333;
-	color: white;
+	background: var(--card-bg-color);
+	color: var(--font-primary-color);
 	text-align: start;
 	font-size: 16px;
 }

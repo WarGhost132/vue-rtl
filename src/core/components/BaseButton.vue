@@ -42,12 +42,12 @@ defineProps({
 }
 
 .base-button--primary {
-	background-color: var(--dark-color-primary);
-	color: var(--dark-font-color-primary);
+	background-color: var(--color-primary);
+	color: var(--font-primary-color);
 }
 
 .base-button--secondary {
-	background-color: var(--dark-color-secondary);
-	color: var(--dark-font-color-secondary);
+	background-color: var(--color-secondary);
+	color: var(--font-secondary-color);
 }
 </style>

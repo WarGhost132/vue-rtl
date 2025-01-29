@@ -43,7 +43,7 @@ defineProps({
 
 .base-skeleton__item {
 	overflow: hidden;
-	background: linear-gradient(90deg, #3C3C3C, #444444, #333333);
+	background: linear-gradient(90deg, var(--skeleton-gradient-start), var(--skeleton-gradient-middle), var(--skeleton-gradient-end));
 	background-size: 400% 400%;
 	animation: gradient 10s ease infinite;
 	transform: translate3d(0, 0, 0);

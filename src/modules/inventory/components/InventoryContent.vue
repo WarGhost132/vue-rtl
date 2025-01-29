@@ -67,7 +67,7 @@ const handleDelete = ({ id, quantity }: { id: number, quantity: number }) => {
 	</div>
 </template>
 
-<style>
+<style lang="scss">
 .inventory-content {
 	position: relative;
 }
@@ -89,13 +89,13 @@ const handleDelete = ({ id, quantity }: { id: number, quantity: number }) => {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border: 1px solid #4D4D4D;
+	border: 1px solid var(--card-border);
 	position: relative;
 	cursor: pointer;
 }
 
 .inventory-content__cell:hover {
-	background-color: #2F2F2F;
+	background-color: var(--card-hover);
 }
 
 .inventory-content__item-image {
@@ -111,7 +111,7 @@ const handleDelete = ({ id, quantity }: { id: number, quantity: number }) => {
 	bottom: 0;
 	right: 0;
 	padding: 2px 4px;
-	border: 1px solid #4D4D4D;
+	border: 1px solid var(--card-border);
 	border-top-left-radius: 6px;
 	width: 32px;
 	height: 32px;
