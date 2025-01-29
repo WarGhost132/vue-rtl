@@ -36,10 +36,10 @@ html[theme='light-theme'] {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: Inter, sans-serif;
 }
 
 body {
-	font-family: Arial, sans-serif;
 	transition: background-color 0.3s ease, color 0.3s ease;
 	background-color: var(--background-color);
 }

@@ -177,19 +177,20 @@ const confirmDelete = () => {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
+	gap: 20px;
 	align-items: center;
+	justify-content: space-between;
 }
 
 .inventory-drawer__delete-input {
 	width: 100%;
-	padding: 10px;
+	padding: 12px;
 	border: 1px solid var(--card-border);
-	border-radius: 8px;
+	border-radius: 4px;
 	background: var(--card-bg-color);
 	color: var(--font-primary-color);
 	text-align: start;
-	font-size: 16px;
+	font-size: 14px;
 }
 
 .inventory-drawer__delete-buttons {
