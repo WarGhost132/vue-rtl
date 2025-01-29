@@ -1,0 +1,54 @@
+@use './variables' as *;
+
+html[theme='dark-theme'] {
+	--background-color: #{$dark-bg};
+	--card-bg-color: #{$dark-card};
+	--card-border: #{$dark-card-border};
+	--card-hover: #{$dark-card-hover};
+	--font-primary-color: #{$dark-font-color-primary};
+	--font-secondary-color: #{$dark-font-color-secondary};
+	--color-primary: #{$dark-color-primary};
+	--color-secondary: #{$dark-color-secondary};
+	--drawer-gradient-start: #{$dark-drawer-gradient-start};
+	--drawer-gradient-end: #{$dark-drawer-gradient-end};
+	--skeleton-gradient-start: #{$dark-skeleton-gradient-start};
+	--skeleton-gradient-middle: #{$dark-skeleton-gradient-middle};
+	--skeleton-gradient-end: #{$dark-skeleton-gradient-end};
+}
+
+html[theme='light-theme'] {
+	--background-color: #{$light-bg};
+	--card-bg-color: #{$light-card};
+	--card-border: #{$light-card-border};
+	--card-hover: #{$light-card-hover};
+	--font-primary-color: #{$light-font-color-primary};
+	--font-secondary-color: #{$light-font-color-secondary};
+	--color-primary: #{$light-color-primary};
+	--color-secondary: #{$light-color-secondary};
+	--drawer-gradient-start: #{$light-drawer-gradient-start};
+	--drawer-gradient-end: #{$light-drawer-gradient-end};
+	--skeleton-gradient-start: #{$light-skeleton-gradient-start};
+	--skeleton-gradient-middle: #{$light-skeleton-gradient-middle};
+	--skeleton-gradient-end: #{$light-skeleton-gradient-end};
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Inter, sans-serif;
+}
+
+body {
+	transition: background-color 0.3s ease, color 0.3s ease;
+	background-color: var(--background-color);
+}
+
+.card {
+	background-color: var(--card-bg-color);
+	color: var(--font-primary-color);
+	border: 1px solid var(--card-border);
+	border-radius: 12px;
+	width: 100%;
+	height: 100%;
+}
