@@ -30,7 +30,7 @@ const confirmDelete = () => {
 </script>
 
 <template>
-	<div class="inventory-drawer">
+	<div class="inventory-drawer" :class="{'is-visible': props.item}">
 		<div class="inventory-drawer__header">
 			<Icon
 				class="inventory-drawer__close-btn"
@@ -78,26 +78,63 @@ const confirmDelete = () => {
 	</div>
 </template>
 
-<style>
+<style scoped lang="scss">
 .inventory-drawer {
 	position: absolute;
 	top: 0;
-	right: 0;
+	right: -100%;
 	width: 40%;
 	height: 100%;
-	background: linear-gradient(180deg, var(--drawer-gradient-start) 1%, var(--drawer-gradient-end) 99%);
+	background:
+		linear-gradient(
+			180deg,
+			var(--drawer-gradient-start) 1%,
+			var(--drawer-gradient-end) 99%
+		);
 	padding: 18px 15px;
 	border: 1px solid var(--card-border);
 	border-top-right-radius: 12px;
 	border-bottom-right-radius: 12px;
+	z-index: 10;
+	opacity: 0;
+	animation: drawerSlideOut 0.3s ease-out forwards;
 }
+
+.inventory-drawer.is-visible {
+	animation: drawerSlideIn 0.3s ease-in forwards;
+}
+
+@keyframes drawerSlideIn {
+	0% {
+		right: -100%;
+		opacity: 0;
+	}
+	100% {
+		right: 0;
+		opacity: 1;
+	}
+}
+
+@keyframes drawerSlideOut {
+	0% {
+		right: 0;
+		opacity: 1;
+	}
+	100% {
+		right: -100%;
+		opacity: 0;
+	}
+}
+
 .inventory-drawer__header {
 	display: flex;
 	justify-content: flex-end;
 }
+
 .inventory-drawer__close-btn {
 	cursor: pointer;
 }
+
 .inventory-drawer__content {
 	display: flex;
 	flex-direction: column;
@@ -107,29 +144,35 @@ const confirmDelete = () => {
 	width: 100%;
 	height: 100%;
 }
+
 .inventory-drawer__content hr {
 	width: 100%;
 	border: none;
 	border-top: 1px solid var(--card-border);
 }
+
 .inventory-drawer__content img {
 	min-width: 130px;
 	min-height: 130px;
 }
+
 .inventory-drawer__content-description {
 	display: flex;
 	flex-direction: column;
 	gap: 24px;
 	width: 100%;
 }
+
 .inventory-drawer__content-description-content {
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
 }
+
 .inventory-drawer__button {
 	width: 100%;
 }
+
 .inventory-drawer__delete-section {
 	width: 100%;
 	display: flex;
@@ -137,6 +180,7 @@ const confirmDelete = () => {
 	gap: 10px;
 	align-items: center;
 }
+
 .inventory-drawer__delete-input {
 	width: 100%;
 	padding: 10px;
@@ -147,6 +191,7 @@ const confirmDelete = () => {
 	text-align: start;
 	font-size: 16px;
 }
+
 .inventory-drawer__delete-buttons {
 	display: flex;
 	gap: 10px;

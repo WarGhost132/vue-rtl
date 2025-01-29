@@ -62,14 +62,16 @@ const handleDelete = ({ id, quantity }: { id: number, quantity: number }) => {
 				:item="selectedItem"
 				@close="selectedItem = null"
 				@delete="handleDelete"
+				:class="{'is-visible': false}"
 			/>
 		</div>
 	</div>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 .inventory-content {
 	position: relative;
+	overflow: hidden;
 }
 
 .inventory-content__card {

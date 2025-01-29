@@ -50,7 +50,7 @@ onMounted(() => {
 	</div>
 </template>
 
-<style>
+<style scoped lang="scss">
 .inventory-footer__wrapper {
 	position: relative;
 	height: 100%;
