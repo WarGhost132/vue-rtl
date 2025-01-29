@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import InventorySidebar from '../components/InventorySidebar.vue'
 import InventoryContent from '../components/InventoryContent.vue'
+import InventoryFooter from '../components/InventoryFooter.vue'
 </script>
 
 <template>
   <div class="wrapper">
     <InventorySidebar class="sidebar" />
     <InventoryContent class="content" />
-    <div class="card footer"></div>
+    <InventoryFooter class="footer" />
   </div>
 </template>
 

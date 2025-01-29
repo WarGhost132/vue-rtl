@@ -36,6 +36,7 @@ defineProps({
 
 <style scoped lang="scss">
 .skeleton__wrapper {
+	width: 100%;
   display: flex;
   justify-content: center;
 }
