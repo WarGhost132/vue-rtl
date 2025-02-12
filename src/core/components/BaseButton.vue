@@ -7,7 +7,7 @@ defineProps({
   type: {
     type: String,
     required: true,
-    validator: value => {
+    validator: (value: string) => {
       return ['primary', 'secondary'].includes(value)
     }
   }

@@ -3,7 +3,7 @@ defineProps({
   width: {
     type: String,
     required: true,
-    validator: value => {
+    validator: (value: string) => {
       return [
         '100',
         '90',
